@@ -9,7 +9,8 @@ const Comments = () => {
   const startAddCommentHandler = () => {
     setIsAddingComment(true);
   };
-  console.log(isAddingComment);
+
+  // console.log(isAddingComment);
 
   return (
     <section className={classes.comments}>
