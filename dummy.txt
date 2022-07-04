@@ -1,0 +1,14 @@
+// const DUMMY_QUOTES = [
+  { id: "q1", author: "author1", text: "text1" },
+  { id: "q2", author: "author2", text: "text2" },
+];
+undefined
+
+// const quote = DUMMY_QUOTES.find((quote) => quote.id === 'q1');
+undefined
+
+//quote
+{id: 'q1', author: 'author1', text: 'text1'}
+
+//quote.author 
+author1
