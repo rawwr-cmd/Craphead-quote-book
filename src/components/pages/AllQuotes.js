@@ -1,12 +1,38 @@
 import QuoteList from "../quotes/QuoteList";
-
-const DUMMY_QUOTES = [
-  { id: "q1", author: "author1", text: "text1" },
-  { id: "q2", author: "author2", text: "text2" },
-];
+import useHttp from "../hooks/use-Http";
+import { getAllQuotes } from "../hooks/firebaseApi";
+import { useEffect } from "react";
+import LoadingSpinner from "../UI/LoadingSpinner";
+import NoQuotesFound from "../quotes/NoQuotesFound";
 
 const AllQuotes = () => {
-  return <QuoteList quotes={DUMMY_QUOTES} />;
+  const {
+    sendRequest,
+    status,
+    data: loadedQuotes,
+    error,
+  } = useHttp(getAllQuotes, true);
+
+  useEffect(() => {
+    sendRequest();
+  }, [sendRequest]);
+
+  if (status === "pending") {
+    return (
+      <div className="centered">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <p className="centered focused">{error}</p>;
+  }
+
+  if (status === "completed" && !loadedQuotes && loadedQuotes.length === 0) {
+    return <NoQuotesFound />;
+  }
+  return <QuoteList quotes={loadedQuotes} />;
 };
 
 export default AllQuotes;
