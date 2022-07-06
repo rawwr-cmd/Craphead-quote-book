@@ -5,7 +5,7 @@ const CommentItem = (props) => {
     <li className={classes.item}>
       <p>{props.text}</p>
     </li>
-  );
+  ); 
 };
 
 export default CommentItem;
