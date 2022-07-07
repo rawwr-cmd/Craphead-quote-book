@@ -53,6 +53,8 @@ export const addQuote = async (quoteData) => {
     throw new Error(data.message || "Could not create quote.");
   }
 
+  console.log(data);
+
   return null;
 };
 

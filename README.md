@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-# Deplyed here [Craphead](https://craphead-quote-book.vercel.app)
+# Deployed here [Craphead](https://craphead-quote-book-git-main-rawwr.vercel.app)
+
+# Deployed on netlify[NCraphead](https://62c7194ec75a7a199341be62--lucent-bienenstitch-abc15a.netlify.app/quotes)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
